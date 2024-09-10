@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-import joblib
+import pickle
 
 seed = 42
 
@@ -15,4 +15,4 @@ clf = RandomForestClassifier(n_estimators=100)
 # train the classifier on the training data
 clf.fit(X, y)
 # save the model to disk
-joblib.dump(clf, "rf_model.sav")
+pickle.dump(clf, open("rf_model.sav", 'wb'))
